@@ -22,7 +22,21 @@ body {
   background-size: cover;
   background-position: bottom;
   transition: 0.3 ease-out;
+}
 
+.rainy{
+  background-image: url('./components/assets/images/') ;
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.3 ease-out;
+
+}
+
+.cloudy {
+  background-image: url('./components/assets/images/') ;
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.3 ease-out;
 
 }
 
