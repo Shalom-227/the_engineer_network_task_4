@@ -5,7 +5,6 @@
 }
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .app {
@@ -109,7 +108,6 @@ main {
 
 .weather-data .temperature {
   font-size: 102px;
-  /* position: relative; */
   margin: 0 auto;
   padding: 15px 30px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -138,17 +136,39 @@ main {
   color: #fff;
   text-shadow: 3px 3px rgba(50,50,70, 0.2);
 
+}
 
+.forecast-accordion-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.future-forecast-heading {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1rem;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  user-select: none;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .future-forecast {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.future-forecast-heading {
-  margin-bottom: 10px;
+  padding: 2.5rem;
+  gap: 0.5rem;
+  opacity: 1;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;  
 }
 
 .forecast-day {
@@ -160,4 +180,9 @@ main {
   min-width: 80px;
   gap: 2rem;
   box-shadow: 3px 6px rgba(50,50,70,0.4);
+    transition: transform 0.3s ease;
+}
+
+.forecast-day:hover {
+  transform: scale(1.05);
 }

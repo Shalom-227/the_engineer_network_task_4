@@ -76,7 +76,7 @@ function App() {
               {forecast.length > 0 && (
                 <div className="future-forecast-container">
                   <details className='future-forecast-accordion'>
-                    <summary className='future-forecast-heading'>5-Day Forecast </summary>
+                    <summary className='future-forecast-heading'>Access 5-Day Forecast </summary>
                     <div className="future-forecast">
                       {forecast.map((day, index) => (
                         <div key={index} className="forecast-day">
