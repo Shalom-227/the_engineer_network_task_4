@@ -12,7 +12,7 @@ body {
   background-image: url('../public/components/assets/images/winter-2.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.3 ease-out;
+  transition: background-image 0.3s ease-out;
  
 
 }
@@ -21,22 +21,22 @@ body {
   background-image: url('../public/components/assets/images/summer.jpg') ;
   background-size: cover;
   background-position: bottom;
-  transition: 0.3 ease-out;
+  transition: background-image 0.3s ease-out;
 }
 
 .rainy{
-  background-image: url('../public/components/assets/images/summer-2.jpg') ;
+  background-image: url('../public/components/assets/images/rainy.png') ;
   background-size: cover;
   background-position: bottom;
-  transition: 0.3 ease-out;
+  transition: background-image 0.3s ease-out;
 
 }
 
 .cloudy {
-  background-image: url('../public/components/assets/images/winter-1.jpg') ;
+  background-image: url('../public/components/assets/images/cloudy.png') ;
   background-size: cover;
   background-position: bottom;
-  transition: 0.3 ease-out;
+  transition: background-image 0.3s ease-out;
 
 }
 
@@ -128,7 +128,7 @@ main {
   color: white;
   font-weight: 500;
   text-shadow: 3px 3px rgba(50,50,70, 0.4);
-  margin-bottom: 15px;
+  margin-bottom: 46px;
   
 }
 
@@ -136,13 +136,18 @@ main {
 .future-forecast-container{
   text-align: center;
   color: #fff;
-  text-shadow: 3px 3px rgba(50,50,70, 0.4);
+  text-shadow: 3px 3px rgba(50,50,70, 0.2);
 
 }
 
 .future-forecast {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.future-forecast-heading {
+  margin-bottom: 10px;
 }
 
 .forecast-day {
@@ -153,5 +158,4 @@ main {
   padding: 1rem;
   min-width: 80px;
   gap: 2rem;
-
 }

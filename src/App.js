@@ -75,7 +75,7 @@ function App() {
               </div>
               {forecast.length > 0 && (
                 <div className="future-forecast-container">
-                  <h3>5-Day Forecast</h3>
+                  <h3 className='future-forecast-heading'>5-Day Forecast</h3>
                   <div className="future-forecast">
                     {forecast.map((day, index) => (
                       <div key={index} className="forecast-day">
