@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type';
 import React, { useState } from 'react';
 
 
@@ -39,16 +40,20 @@ function App() {
       <main>
         <div className='search-box'>
           <input type="text" className='search-bar' placeholder='Search here ...' 
-          onChange={(e) => setQuery(e.target.value)} value={query} onKeyDown={search}></input>
+            onChange={(e) => setQuery(e.target.value)} value={query} onKeyDown={search}></input>
         </div>
-        <div className='weather-display'>
-          <div className='location'> Osogbo City, NGR</div>
-          <div className='date'>{todaysDate(new Date())}</div>
-          <div className='weather-data'>
-            <div className='temperature'> 30&deg;C</div>
-            <div className='forecast'> Winter</div>
-          </div>
-        </div>
+          {typeof weather.main != "undefined" ? (
+          <div>
+            <div className='weather-display'>
+              <div className='location'>{weather.name}, {weather.sys.country}</div>
+              <div className='date'>{todaysDate(new Date())}</div>
+              <div className='weather-data'>
+                <div className='temperature'> 30&deg;C</div>
+                <div className='forecast'> Winter</div>
+                </div>
+              </div>
+            </div>
+        ) : ('')}
       </main>
     </div>
   );
