@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.app {
+  background-image: url('./components/assets/images/winter-2.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.3 ease-out;
+
+}
+
+main {
+  min-height: 100vh;
+}
