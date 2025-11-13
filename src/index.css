@@ -9,7 +9,7 @@ body {
 }
 
 .app {
-  background-image: url('./components/assets/images/winter-2.jpg');
+  background-image: url('../public/components/assets/images/winter-2.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.3 ease-out;
@@ -18,14 +18,14 @@ body {
 }
 
 .summer {
-  background-image: url('./components/assets/images/summer.jpg') ;
+  background-image: url('../public/components/assets/images/summer.jpg') ;
   background-size: cover;
   background-position: bottom;
   transition: 0.3 ease-out;
 }
 
 .rainy{
-  background-image: url('./components/assets/images/') ;
+  background-image: url('../public/components/assets/images/summer-2.jpg') ;
   background-size: cover;
   background-position: bottom;
   transition: 0.3 ease-out;
@@ -33,7 +33,7 @@ body {
 }
 
 .cloudy {
-  background-image: url('./components/assets/images/') ;
+  background-image: url('../public/components/assets/images/winter-1.jpg') ;
   background-size: cover;
   background-position: bottom;
   transition: 0.3 ease-out;
