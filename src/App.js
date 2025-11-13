@@ -22,9 +22,13 @@ function App() {
         <div className='search-box'>
           <input type="text" className='search-bar' placeholder='Search here ...'></input>
         </div>
-        <div className='location-box'>
+        <div className='weather-display'>
           <div className='location'> Osogbo City, NGR</div>
           <div className='date'>{todaysDate(new Date())}</div>
+          <div className='weather-data'>
+            <div className='temperature'> 30&deg;C</div>
+            <div className='forecast'> Winter</div>
+          </div>
         </div>
       </main>
     </div>
