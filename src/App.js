@@ -51,9 +51,13 @@ function App() {
           ? "app rainy"
           : weather.weather[0].main === "Clouds"
             ? "app cloudy"
-            : weather.main.temp > 25
-              ? "app summer"
-              : "app"
+            : weather.weather[0].main === "Clear"
+              ? "app clear-day"
+              : weather.weather[0].main === "Smoke"
+                ? "app smoky"
+                : weather.main.temp > 35
+                  ? "app summer"
+                  : "app"
       )
     : "app"
 }>

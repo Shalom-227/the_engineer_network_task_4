@@ -33,6 +33,22 @@ body {
 
 }
 
+.clear-day{
+  background-image: url('../public/components/assets/images/clear-day.png') ;
+  background-size: cover;
+  background-position: bottom;
+  transition: background-image 0.3s ease-out;
+
+}
+
+.smoky{
+  background-image: url('../public/components/assets/images/smoky.png') ;
+  background-size: cover;
+  background-position: bottom;
+  transition: background-image 0.3s ease-out;
+
+}
+
 .cloudy {
   background-image: url('../public/components/assets/images/cloudy.png') ;
   background-size: cover;
