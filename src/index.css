@@ -16,6 +16,15 @@ body {
 
 }
 
+.summer {
+  background-image: url('./components/assets/images/summer.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.3 ease-out;
+
+
+}
+
 main {
   min-height: 100vh;
 }
