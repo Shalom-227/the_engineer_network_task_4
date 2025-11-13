@@ -12,18 +12,26 @@ function App() {
 
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
+  const [forecast, setForecast] = useState([]);
 
   const search = evt => {
     if (evt.key === "Enter") {
-      fetch(`${api.base}/weather?q=${query}&units=metric&APPID=${api.key}`)
-      .then(res => res.json())
-      .then(result => {
-        setWeather(result);
+      Promise.all([
+        fetch(`${api.base}/weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then(res => res.json()),
+        fetch(`${api.base}/forecast?q=${query}&units=metric&APPID=${api.key}`)
+        .then(res => res.json())
+      ])
+      .then(([weatherResult, forecastResult]) => {
+        setWeather(weatherResult);
+        const daily = forecastResult.list.filter(item => item.dt_txt.includes("12:00:00"));
+        setForecast(daily);
         setQuery('');
-        console.log(result);
-    });
+        console.log(weatherResult, daily);
+    })
+    .catch(err => console.error(err));
   }
-}
+};
 
   //function that tells today's date
   const todaysDate = (entry) => {
