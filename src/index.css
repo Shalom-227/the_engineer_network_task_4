@@ -10,7 +10,7 @@ body {
 }
 
 .app {
-  background-image: url('../public/components/assets/images/winter-2.jpg');
+  background-image: url('../public/components/assets/images/winter.png');
   background-size: cover;
   background-position: bottom;
   transition: background-image 0.3s ease-out;
