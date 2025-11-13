@@ -48,8 +48,8 @@ function App() {
               <div className='location'>{weather.name}, {weather.sys.country}</div>
               <div className='date'>{todaysDate(new Date())}</div>
               <div className='weather-data'>
-                <div className='temperature'> 30&deg;C</div>
-                <div className='forecast'> Winter</div>
+                <div className='temperature'>{Math.round(weather.main.temp)}&deg;c</div>
+                <div className='forecast'> {weather.weather[0].main}</div>
                 </div>
               </div>
             </div>
