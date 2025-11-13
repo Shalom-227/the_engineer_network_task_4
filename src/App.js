@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 const api = {
   key: "14ebf360bbbd41434fd818ca7994d1cd",
@@ -8,6 +9,10 @@ const api = {
 
 function App() {
 
+  const [query, setQuery] = useState('');
+  const [weather, setWeather] = useState({});
+
+  //function that tells today's date
   const todaysDate = (entry) => {
     
     let dayInWords = entry.toLocaleString('en-US', {weekday: 'short'})
@@ -16,6 +21,7 @@ function App() {
     let year = entry.getFullYear();
     return `${dayInWords}, ${day} ${month} ${year}`;
   }
+
   return (
     <div className="app">
       <main>
