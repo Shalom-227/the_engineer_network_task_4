@@ -5,6 +5,8 @@
 }
 
 body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;;
 }
 
 .app {
@@ -55,22 +57,16 @@ main {
   display: block;
   width: 100%;
   padding: 15px;
-  color: linear-gradient(to left, rgba(0,128,128,0.5), rgba(255,255,255,0));;
-  
-  /* appearance: none;
-  -moz-appearance: none; 
-  -webkit-appearance: none; */
-  background: rgb(229, 225, 225);
-  
-  background-color: rgba(red, green, blue, 1);
+  color: linear-gradient(to left, rgba(0,128,128,0.5), rgba(255,255,255,0));
+  background: rgb(229, 225, 225);  
+  background-color: rgba(255, 255, 255, 1);
   outline: none;
   border: none;
   border-radius: 0 0 1rem 1rem; 
   margin-top: -24px;
   box-shadow: 2px 5px rgba(0,0,0,0.2);
-  color:blue;
+  color: #008080;
   font-size: 16px;
-
   transition: 0.3 ease-in;
   margin-bottom: 40px;
 }
