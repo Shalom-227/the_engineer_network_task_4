@@ -12,6 +12,18 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
+  const search = evt => {
+    if (evt.key === "Enter") {
+      fetch(`${api.base}/weather?q=${query}&units=metric&APPID=${api.key}`)
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setQuery('');
+        console.log(result);
+    });
+  }
+}
+
   //function that tells today's date
   const todaysDate = (entry) => {
     
@@ -26,7 +38,8 @@ function App() {
     <div className="app">
       <main>
         <div className='search-box'>
-          <input type="text" className='search-bar' placeholder='Search here ...'></input>
+          <input type="text" className='search-bar' placeholder='Search here ...' 
+          onChange={(e) => setQuery(e.target.value)} value={query} onKeyDown={search}></input>
         </div>
         <div className='weather-display'>
           <div className='location'> Osogbo City, NGR</div>
