@@ -75,17 +75,19 @@ function App() {
               </div>
               {forecast.length > 0 && (
                 <div className="future-forecast-container">
-                  <h3 className='future-forecast-heading'>5-Day Forecast</h3>
-                  <div className="future-forecast">
-                    {forecast.map((day, index) => (
-                      <div key={index} className="forecast-day">
-                        <div className="forecast-date"> {new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' })} </div>
-                        <div className="forecast-temp">{Math.round(day.main.temp)} &deg;C </div>
-                        <div className="forecast-weather">{day.weather[0].main} </div>
-                      </div>
-                    ))}
+                  <details className='future-forecast-accordion'>
+                    <summary className='future-forecast-heading'>5-Day Forecast </summary>
+                    <div className="future-forecast">
+                      {forecast.map((day, index) => (
+                        <div key={index} className="forecast-day">
+                          <div className="forecast-date"> {new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' })} </div>
+                          <div className="forecast-temp">{Math.round(day.main.temp)} &deg;C </div>
+                          <div className="forecast-weather">{day.weather[0].main} </div>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
                   </div>
-                </div>
               )}
 
 
