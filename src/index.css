@@ -1,7 +1,56 @@
+      /* ------------------ TYPOGRAPHY ----------------
+      FONT SIZES
+      scaling factor = 1.3
+      1rem (base)/ 1.3rem / 1.7rem / 2.2rem / 2.9rem /  3.7rem / 4.8rem / 6.3rem / 8.2rem/
+
+      FONT WEIGHT
+      300/500/900
+
+      FONT FAMILY
+      Inter 
+
+      -------------------COLOURS--------------------
+      #fff (white)
+      #008080 (teal)
+      
+ */
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html{
+  font-size: 75%;    /* 75/100 x 16 = 12px*/
+}
+
+:root {
+  --main-height: 100vh;
+
+  --margin-bottom-sm: 2.8rem;
+  --margin-bottom-md: 3.3rem; 
+  --margin-bottom-lg: 3.8rem;
+
+  --font-size-sm: 1.3rem;
+  --font-size-md: 1.7rem;
+  --font-size-lg: 2.9rem;
+  --font-size-xlg: 3.78rem;
+  --font-size-xxlg: 4.8rem;
+  --font-size-xxxlg: 8.2rem;
+
+  --search-bar-color: linear-gradient(to left, rgba(0,128,128,0.5), rgba(255,255,255,0));
+  --search-bar-background:  rgb(248, 244, 244);
+  --search-bar-background-focus: rgba(255, 255, 255, 1);
+  --search-bar-color: #008080;
+
+  --weather-color: rgba(255, 255, 255, 1);
+
+  --font-weight-sm: 300;
+  --font-weight-moderate: 500;
+  --font-weight-lg: 900;
+
 }
 
 body {
@@ -58,9 +107,9 @@ body {
 }
 
 main {
-  min-height: 100vh;
+  min-height: var(--main-height);
   background-image: linear-gradient(to bottom, rgba(0,128,128,0.5), rgba(255,255,255,0));
-  padding: 25px;
+  padding: 2.1rem;
 }
 
 .search-box {
@@ -72,42 +121,41 @@ main {
 .search-box .search-bar {
   display: block;
   width: 100%;
-  padding: 15px;
-  color: linear-gradient(to left, rgba(0,128,128,0.5), rgba(255,255,255,0));
-  background: rgb(229, 225, 225);  
-  background-color: rgba(255, 255, 255, 1);
+  padding: 1.1rem;
+  color: var(--search-bar-color); 
+  background-color: var(--search-bar-background);
   outline: none;
   border: none;
   border-radius: 0 0 1rem 1rem; 
   margin-top: -24px;
   box-shadow: 2px 5px rgba(0,0,0,0.2);
-  color: #008080;
-  font-size: 16px;
+  color: var(--search-bar-color);
+  font-size: var(--font-size-sm);
   transition: 0.3 ease-in;
-  margin-bottom: 40px;
+  margin-bottom: var(--margin-bottom-md);
 }
 
 .search-box .search-bar:focus{
-  background-color:  rgb(248, 244, 244);;
+  background-color: var(--search-bar-background-focus);;
 }
 
 .weather-display .location {
-  color: #fff;
-  font-size: 32px;
-  font-weight: 500;
+  color: var(--weather-color);
+  font-size: var(--font-size-xlg);
+  font-weight: var(--font-weight-moderate);
   text-align: center;
   text-shadow: 2px 2px rgba(50,50,70,0.5);
 
 }
 
 .weather-display .date {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 300;
+  color: var(--weather-color);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-sm);
   font-style: oblique;
   text-align: center;
   text-shadow: 2px 2px rgba(50,50,70,0.5);
-  margin-bottom: 20px;
+  margin-bottom: var(--margin-bottom-sm);
 
 }
 
@@ -119,24 +167,24 @@ main {
 }
 
 .weather-data .temperature {
-  font-size: 102px;
+  font-size: var(--font-size-xxxlg);
   margin: 0 auto;
-  padding: 15px 30px;
+  padding: 1.3rem 2.6rem;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  color: white;
-  font-weight: 900;
+  color: var(--weather-color);
+  font-weight: var(--font-weight-lg);
   text-shadow: 3px 6px rgba(50,50,70,0.5);
   box-shadow: 3px 6px rgba(50,50,70,0.4);
 ;
 }
 
 .weather-data .forecast {
-  font-size: 42px;
+  font-size: var(--font-size-lg);
   margin: 0 auto;
-  padding: 10px 20px;
-  color: white;
-  font-weight: 500;
+  padding: 0.9rem 1.8rem;
+  color: var(--weather-color);
+  font-weight: var(--font-weight-moderate);
   text-shadow: 3px 3px rgba(50,50,70, 0.4);
   margin-bottom: 46px;
   
@@ -145,8 +193,8 @@ main {
 
 .future-forecast-container{
   text-align: center;
-  color: #fff;
-  text-shadow: 3px 3px rgba(50,50,70, 0.2);
+  color: var(--weather-color);
+  text-shadow: 3px 3px rgba(50,50,70, 0);
 
 }
 
@@ -156,7 +204,7 @@ main {
   overflow: hidden;
   width: 90%;
   margin: 0 auto;
-  color: #fff;
+  color: var(--weather-color);
   transition: all 0.3s ease-in-out;
 }
 
@@ -170,6 +218,7 @@ main {
   user-select: none;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
+  border-radius: 0 0 1rem 1rem; 
 }
 
 .future-forecast {
@@ -192,7 +241,7 @@ main {
   min-width: 80px;
   gap: 2rem;
   box-shadow: 3px 6px rgba(50,50,70,0.4);
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .forecast-day:hover {
