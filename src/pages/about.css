@@ -1,0 +1,46 @@
+
+.about-page {
+    height: 100vh;
+    max-width: 100%;
+    background-image: 
+    linear-gradient(to bottom, rgba(0,128,128,0.5), rgba(255,255,255,0));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+
+    h1, h2 {
+        padding-top: 4rem;
+        padding-bottom: 2rem;  
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+    ul{
+       list-style:disc;
+        margin: 0 1rem;
+        font-size: 1.5rem;
+
+    
+    }
+
+    
+}
+
+ 
+
