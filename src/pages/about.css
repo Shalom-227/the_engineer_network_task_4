@@ -1,11 +1,13 @@
 
 .about-page {
-    height: 100vh;
+    height: 140vh;
     max-width: 100%;
     background-image: 
     linear-gradient(to bottom, rgba(0,128,128,0.5), rgba(255,255,255,0));
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    position: relative;
+    z-index: 1;
     
 }
 
@@ -35,12 +37,9 @@
        list-style:disc;
         margin: 0 1rem;
         font-size: 1.5rem;
-
-    
-    }
-
-    
+    }   
 }
 
- 
-
+.space {   
+     margin-bottom: 2rem;
+    }

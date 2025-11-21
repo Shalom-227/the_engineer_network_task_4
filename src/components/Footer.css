@@ -1,0 +1,39 @@
+
+.footer-container {
+  font-size: 1.5rem;
+
+
+}
+.links {
+  background-color: #282c34;
+  padding: 2rem 4rem;
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links{
+    list-style: none;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links p {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  
+}

@@ -6,6 +6,7 @@ import Weather from "./pages/Weather";
 import Welcome from "./pages/Home";
 import { queryByAttribute } from "@testing-library/dom";
 import Home from "./pages/Home";
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/weather" element={<Weather />} />
       <Route path="/about" element={<About />} />
     </Routes>
+    <Footer/>
     </>
   );
 }

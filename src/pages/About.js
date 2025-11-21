@@ -28,7 +28,7 @@ function About() {
         </p>
       </div>
 
-      <div className='block'>
+      <div className='block space'>
         <h2>Our Vision</h2>
         <p>
           Weather affects every part of life — from what you wear to how you

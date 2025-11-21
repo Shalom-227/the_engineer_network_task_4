@@ -8,19 +8,20 @@
     background-repeat: repeat;
     background-position: bottom;
     background-blend-mode: luminosity;
-    padding-top: 5rem;
+    padding-top: 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
 }
 .text {
-font-size: 6rem;
-color: rgba(255, 255, 255, 1);
-background-color: rgba(255, 255, 255, 0.2);
-border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-text-shadow: 2px 2px rgba(50,50,70,0.5);
-text-align: center;
+    font-size: 6rem;
+    color: rgb(251, 248, 248);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.01);
+    text-shadow: 2px 2px rgba(50,50,70,0.5);
+    text-align: center;
 }
-
+#colored-text {
+    color: rgb(157, 9, 9);
+    text-decoration: overline
+}
