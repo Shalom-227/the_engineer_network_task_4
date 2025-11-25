@@ -40,6 +40,10 @@ function App() {
 
   const search = evt => {
     if (evt.key === "Enter") {
+
+      setLoading(true);
+      setError(null);
+
       Promise.all([
         fetch(`${api.base}/weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(res => res.json()),
@@ -47,15 +51,24 @@ function App() {
         .then(res => res.json())
       ])
       .then(([weatherResult, forecastResult]) => {
+
+        if (weatherResult.cod === "404") {
+          throw new Error("City not found. Please try another name.");
+        }
         setWeather(weatherResult);
         const daily = forecastResult.list.filter(item => item.dt_txt.includes("12:00:00"));
         setForecast(daily);
         setQuery('');
         console.log(weatherResult, daily);
-    })
-    .catch(err => console.error(err));
-  }
-};
+      })
+      .catch(err => { setError(err.message || "Hmmm... Soemthing is not right");
+
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    }
+  };
 
   // create function to add city favorites
 
