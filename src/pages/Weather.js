@@ -13,6 +13,7 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState([]);
+  const [savedCities, setSavedCities] = useState([]);
 
   const search = evt => {
     if (evt.key === "Enter") {
@@ -32,6 +33,20 @@ function App() {
     .catch(err => console.error(err));
   }
 };
+
+  // create function to add city favorites
+
+  const addFavoriteCity = () => {
+    if (!weather.name) return;
+    const newCity = {
+      name: weather.name,
+      country: weather.sys.country,
+      temp: weather.main.temp,
+      id: Date.now()
+    };
+  setSavedCities([...savedCities, newCity]);
+  };
+
 
   //function that tells today's date
   const todaysDate = (entry) => {
@@ -60,7 +75,7 @@ function App() {
                   : "app"
       )
     : "app"
-}>
+    }>
     
       <main>
         <div className='search-box'>
@@ -75,31 +90,42 @@ function App() {
               <div className='weather-data'>
                 <div className='temperature'>{Math.round(weather.main.temp)}&deg;c</div>
                 <div className='forecast'> {weather.weather[0].main}</div>
-                </div>
+                <button onClick={addFavoriteCity} className="save-btn">Save City</button>
               </div>
-              {forecast.length > 0 && (
-                <div className="future-forecast-container">
-                  <details className='future-forecast-accordion'>
-                    <summary className='future-forecast-heading'>Access 5-Day Forecast </summary>
-                    <div className="future-forecast">
-                      {forecast.map((day, index) => (
-                        <div key={index} className="forecast-day">
-                          <div className="forecast-date"> {new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' })} </div>
-                          <div className="forecast-temp">{Math.round(day.main.temp)} &deg;C </div>
-                          <div className="forecast-weather">{day.weather[0].main} </div>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                  </div>
-              )}
-
-
             </div>
-        ) : ('')}
+            {forecast.length > 0 && (
+              <div className="future-forecast-container">
+                <details className='future-forecast-accordion'>
+                  <summary className='future-forecast-heading'>Access 5-Day Forecast </summary>
+                  <div className="future-forecast">
+                    {forecast.map((day, index) => (
+                      <div key={index} className="forecast-day">
+                        <div className="forecast-date"> {new Date(day.dt_txt).toLocaleDateString('en-US', { weekday: 'short' })} </div>
+                        <div className="forecast-temp">{Math.round(day.main.temp)} &deg;C </div>
+                        <div className="forecast-weather">{day.weather[0].main} </div>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+                {savedCities.length > 0 && (
+                  <div className="saved-container">
+                    <h3>Saved Cities</h3>
+                    <ul>
+                      {savedCities.map(city => (
+                        <li key={city.id}>
+                          {city.name}, {city.country} — {Math.round(city.temp)}°C
+                        </li>
+                        ))}
+                    </ul>
+                  </div>
+                      )}
+              </div>
+                )}
+          </div>
+            ) : ('')}
       </main>
     </div>
-  );
-}
+    );
+  }
 
 export default App;
