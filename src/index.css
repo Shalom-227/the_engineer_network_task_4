@@ -115,6 +115,7 @@ main {
 .search-box {
   width: 100%;
   margin: 0 auto;
+  position: relative;
  /* background-color: red; */
 }
 
@@ -133,10 +134,33 @@ main {
   font-size: var(--font-size-sm);
   transition: 0.3 ease-in;
   margin-bottom: var(--margin-bottom-md);
+  position: relative;
 }
 
 .search-box .search-bar:focus{
   background-color: var(--search-bar-background-focus);;
+}
+
+.search-button {
+   background: teal;
+   color: none;
+   fill: teal;
+   border: none;
+   border-radius: 2px;
+   opacity: 1;
+   font-size: 2rem;
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 3.8rem;
+   height: 3.8rem;
+   border-radius: 0 0 1rem 1rem;
+   stroke: aliceblue;
+
+}
+
+.search-button:hover {
+
 }
 
 .weather-display .location {

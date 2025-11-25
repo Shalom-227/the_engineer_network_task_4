@@ -39,8 +39,7 @@ function App() {
   }, [savedCities]);
 
   const search = evt => {
-    if (evt.type === "keydown" && evt.key === "Enter") {  //prompts user to enter city name if empty is entered
-      if (!query.trim()) {
+    if (!query.trim()) { //prompts user to enter city name if empty is entered
           setError("Please enter a city name.");
           return;
         }
@@ -59,19 +58,17 @@ function App() {
         if (weatherResult.cod === "404") {
           throw new Error("City not found. Mind your spelling.");
         }
-        setWeather(weatherResult);
-        const daily = forecastResult.list.filter(item => item.dt_txt.includes("12:00:00"));
-        setForecast(daily);
-        setQuery('');
+          setWeather(weatherResult);
+        
+          const daily = forecastResult.list ? forecastResult.list.filter(item => item.dt_txt.includes("12:00:00")) : [];
+          setForecast(daily);
+          // setQuery('');
         console.log(weatherResult, daily);
       })
-      .catch(err => { setError(err.message || "Hmmm... Soemthing is not right");
+        .catch(err => { setError(err.message || "Hmmm... Soemthing is not right");
 
       })
-      .finally(() => {
-        setLoading(false);
-      });
-    }
+      .finally(() => setLoading(false));
   };
 
   // create function to add city favorites
@@ -122,9 +119,20 @@ function App() {
     }>
     
       <main>
-        <div className='search-box'>
-          <input type="text" className='search-bar' placeholder='Enter city...' 
-            onChange={(e) => setQuery(e.target.value)} value={query} onKeyDown={search}></input>
+        <div >
+          < form className='search-box' onSubmit={(evt) => {
+            evt.preventDefault(); search();}}>
+            <input type="text" className='search-bar' placeholder='Enter city...' 
+              onChange={(evt) => setQuery(evt.target.value)} value={query}/>
+              <button className="search-button" type="button" onClick={search}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+              </button>
+          </form>
         </div>
           {loading && (
             <div className="loading">Coming Up...</div>
