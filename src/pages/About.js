@@ -4,13 +4,17 @@ function About() {
   return (
     <div className="about-page">
       <div className='block'>
-        <h1>About Weather App</h1>
-        <p> <span>Welcome!</span> Our mission is simple: to keep you informed about the weather 
-        so you can plan your day with confidence.</p>
+        <h1>About Your Daily Weather App</h1>
+        <p> <span>Welcome!</span><br />
+        Your Daily Weather App provides accurate, real-time weather updates for any city in the world.
+        With a simple search, you can view the current temperature, weather conditions, and a detailed 5-day forecast.<br />
+        The app is designed to be fast, responsive, and beginner-friendly, making it easy for anyone to check the weather quickly and reliably.
+        Whether you’re planning your day, checking travel conditions, or just curious about the weather in another country, 
+        this app gives you the essential information you need.</p>
       </div>
         
       <div className='block'>
-          <h2>What App Does</h2>
+          <h2>What Your Daiy Weather App Does</h2>
           <ul>
               <li>Real-time weather updates for your location and worldwide.</li>
               <li>5-day forecasts with temperature, humidity, wind, and rain chances.</li>
@@ -22,18 +26,13 @@ function About() {
       <div className='block'>
         <h2>How It Works</h2>
         <p>
-          We use trusted sources like the <strong>OpenWeatherMap API</strong> to
-          fetch accurate, up-to-date weather data and present it in a clean,
-          easy-to-read interface.
-        </p>
-      </div>
-
-      <div className='block space'>
-        <h2>Our Vision</h2>
-        <p>
-          Weather affects every part of life — from what you wear to how you
-          travel. By making forecasts accessible and engaging, we help you make
-          smarter, safer, and more enjoyable decisions every day.
+          Your Daily Weather App fetches live weather data from the <strong> OpenWeather API</strong> and displays it in a clean, easy-to-read layout.
+          When you enter a city name, the app retrieves: <br /> Current weather information <br /> 
+          Temperature in Celsius <br /> 
+          Weather conditions (Clear, Cloudy, Rainy, etc.) <br /> 
+          5-day forecast with daily temperature and conditions <br /> 
+          Behind the scenes, the app uses React state management, asynchronous API calls, loading/error handling, CRUD functionality, 
+          and localStorage persistence to enhance user experience.
         </p>
       </div>
     </div>

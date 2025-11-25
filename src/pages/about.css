@@ -32,12 +32,18 @@
 
     p {
         font-size: 1.5rem;
+        line-height: 1.55;
     }
     ul{
        list-style:disc;
         margin: 0 1rem;
         font-size: 1.5rem;
-    }   
+    }
+    
+    li{
+        margin: 0 0rem;
+        justify-self: left;
+    }
 }
 
 .space {   
