@@ -14,7 +14,7 @@
     align-items: center;
 }
 .text {
-    font-size: clamp(6.3rem, 2vw, 24px);
+    font-size: clamp(6.3rem, 2vw, 2rem);
     color: rgb(251, 248, 248);
     background-color: rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.01);
