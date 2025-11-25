@@ -39,7 +39,7 @@ function App() {
   }, [savedCities]);
 
   const search = evt => {
-    if (evt.key === "Enter") {  //prompts user to enter city name if empty is entered
+    if (evt.type === "keydown" && evt.key === "Enter") {  //prompts user to enter city name if empty is entered
       if (!query.trim()) {
           setError("Please enter a city name.");
           return;
