@@ -14,6 +14,9 @@ function App() {
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState([]);
   const [savedCities, setSavedCities] = useState([]);
+  const [loading, setLoading] = useState(false); //state of loading
+  const [error, setError] = useState(null);  // state for error
+
 
 
   useEffect(() => {
