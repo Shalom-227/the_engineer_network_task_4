@@ -1,5 +1,5 @@
 import { type } from '@testing-library/user-event/dist/type';
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 
 
 const api = {
@@ -47,6 +47,10 @@ function App() {
   setSavedCities([...savedCities, newCity]);
   };
 
+  const deleteFavoriteCity = (id) => {
+    setSavedCities(prev => prev.filter(city => city.id !== id));
+  };
+
 
   //function that tells today's date
   const todaysDate = (entry) => {
@@ -90,7 +94,7 @@ function App() {
               <div className='weather-data'>
                 <div className='temperature'>{Math.round(weather.main.temp)}&deg;c</div>
                 <div className='forecast'> {weather.weather[0].main}</div>
-                <button onClick={addFavoriteCity} className="save-btn">Save City</button>
+                <button onClick={addFavoriteCity} className="save-btn">Add As Favorite</button>
               </div>
             </div>
             {forecast.length > 0 && (
@@ -108,12 +112,31 @@ function App() {
                   </div>
                 </details>
                 {savedCities.length > 0 && (
-                  <div className="saved-container">
-                    <h3>Saved Cities</h3>
+                  <div className="favorites-container">
+                    <h3 className='favorites-heading'>Favorites</h3>
                     <ul>
                       {savedCities.map(city => (
-                        <li key={city.id}>
+                        <li className="favorites" key={city.id}>
                           {city.name}, {city.country} — {Math.round(city.temp)}°C
+                          <button className="remove-favorite" onClick={() => 
+                            deleteFavoriteCity(city.id)}> 
+                            <svg className='bin'
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24" height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polyline points="3 6 5 6 21 6" />
+                              <path d="M19 6l-2 14H7L5 6" />
+                              <path d="M10 11v6" />
+                              <path d="M14 11v6" />
+                              <path d="M9 6V4h6v2" />
+                            </svg>
+                          </button>
                         </li>
                         ))}
                     </ul>
