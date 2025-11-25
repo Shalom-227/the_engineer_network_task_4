@@ -322,6 +322,21 @@ main {
   }
 
   }
- 
+}
 
+.loading {
+  margin-top: 2rem;
+  font-size: var(--font-size-sm);
+  text-align: center;
+  color: #aaa;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #ffdddd;
+  color: #b30000;
+  border: 1px solid #ffb3b3;
+  border-radius: 4px;
+  text-align: center;
 }

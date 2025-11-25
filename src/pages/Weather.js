@@ -39,7 +39,11 @@ function App() {
   }, [savedCities]);
 
   const search = evt => {
-    if (evt.key === "Enter") {
+    if (evt.key === "Enter") {  //prompts user to enter city name if empty is entered
+      if (!query.trim()) {
+          setError("Please enter a city name.");
+          return;
+        }
 
       setLoading(true);
       setError(null);
@@ -53,7 +57,7 @@ function App() {
       .then(([weatherResult, forecastResult]) => {
 
         if (weatherResult.cod === "404") {
-          throw new Error("City not found. Please try another name.");
+          throw new Error("City not found. Mind your spelling.");
         }
         setWeather(weatherResult);
         const daily = forecastResult.list.filter(item => item.dt_txt.includes("12:00:00"));
@@ -122,6 +126,14 @@ function App() {
           <input type="text" className='search-bar' placeholder='Enter city...' 
             onChange={(e) => setQuery(e.target.value)} value={query} onKeyDown={search}></input>
         </div>
+          {loading && (
+            <div className="loading">Coming Up...</div>
+            )}
+            {error && (
+              <div className="error-message">
+                {error}
+              </div>
+            )}
           {typeof weather.main != "undefined" ? (
           <div>
             <div className='weather-display'>
