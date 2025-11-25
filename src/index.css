@@ -195,6 +195,7 @@ main {
   text-align: center;
   color: var(--weather-color);
   text-shadow: 3px 3px rgba(50,50,70, 0);
+  font-size: var(--font-size-md);
 
 }
 
@@ -206,6 +207,7 @@ main {
   margin: 0 auto;
   color: var(--weather-color);
   transition: all 0.3s ease-in-out;
+  
 }
 
 .future-forecast-heading {
@@ -229,19 +231,21 @@ main {
   gap: 0.5rem;
   opacity: 1;
   transform: translateY(-20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;  
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .forecast-day {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-template-columns: repeat(auto-fit, 250px);
   background: rgba(255, 255, 255, 0.2);
+  justify-content: center;
   border-radius: 10px;
   padding: 1rem;
   min-width: 80px;
   gap: 2rem;
   box-shadow: 3px 6px rgba(50,50,70,0.4);
   transition: transform 0.3s ease;
+
 }
 
 .forecast-day:hover {
