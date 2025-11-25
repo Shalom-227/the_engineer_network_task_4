@@ -1,5 +1,5 @@
 import { type } from '@testing-library/user-event/dist/type';
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 
 const api = {
@@ -14,6 +14,26 @@ function App() {
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState([]);
   const [savedCities, setSavedCities] = useState([]);
+
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("savedCities"));
+    if (stored) {
+      setSavedCities(stored);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("savedCities", JSON.stringify(savedCities));
+  }, [savedCities]);
+
+  useEffect(() => {
+    if (savedCities.length > 0) {
+      localStorage.setItem("savedCities", JSON.stringify(savedCities));
+    } else {
+      localStorage.removeItem("savedCities");
+    }
+  }, [savedCities]);
 
   const search = evt => {
     if (evt.key === "Enter") {
@@ -122,9 +142,7 @@ function App() {
                             deleteFavoriteCity(city.id)}> 
                             <svg className='bin'
                               xmlns="http://www.w3.org/2000/svg"
-                              width="24" height="24"
                               viewBox="0 0 24 24"
-                              fill="none"
                               stroke="currentColor"
                               strokeWidth="2"
                               strokeLinecap="round"
