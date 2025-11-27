@@ -4,7 +4,6 @@ Documentation for all essential components in the Weather App.
 
 ## 1. Navbar.jsx
 - Displays navigation links
-- Includes dark mode toggle
 - Uses React Router `<Link>`
 
 
