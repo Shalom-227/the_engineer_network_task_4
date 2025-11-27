@@ -19,22 +19,18 @@ This document lists all features included in the Weather App.
 - Delete saved entries
 - Data stored in localStorage
 
-<!-- ## 4. Dark Mode
-- Light and dark themes
-- Toggles from UI
-- Persistent across sessions -->
 
-## 5. Responsive Design
+## 4. Responsive Design
 - Mobile-friendly UI
 - Works on all screen sizes
 - Smooth scroll and transitions
 
-## 6. Loading & Error Handling
+## 5. Loading & Error Handling
 - Shows loaders during API calls
 -- shows "Coming Up..." while data is fetched
 - Handles empty input and 404 errors gracefully
 
-## 7. React Router Navigation
+## 6. React Router Navigation
 - Built with React Router
 - Pages: Home, Weather, About
 - Scroll-to-top behavior included between pages

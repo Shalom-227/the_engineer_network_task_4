@@ -12,6 +12,17 @@ src/
 ├─ components/
 │   ├─ assets
 │   ├─ images/
+│   │    ├─ clear-day.png
+│   │    ├─ cloudy.png
+│   │    ├─ delete-icon.png
+│   │    ├─ rainy.png
+│   │    ├─ smoky.png
+│   │    ├─ summer-2.jpg
+│   │    ├─ summer.jpg
+│   │    ├─ weather-app-logo.png
+│   │    ├─ winter.png
+│   │    ├─ mist.png
+│   │  
 │   ├─ Footer.css
 │   ├─ Footer.jsx
 │   ├─ NavBar.css
@@ -28,7 +39,6 @@ src/
 │   │─ index.css    
 │   └─ index.js
 
----
 
 # 2. Data Flow
 
@@ -50,15 +60,10 @@ src/
 
 API Forecast → Filter ("12:00:00") → forecast[] → 5-Day UI
 
-### Dark Mode
-
-Toggle → darkMode state → <div className="app dark"> → CSS overrides
-
 ### CRUD Saved Cities
 
 Add/Delete → savedCities state → localStorage sync → Render list
 
----
 
 # 3. Main States
 
@@ -68,7 +73,6 @@ Add/Delete → savedCities state → localStorage sync → Render list
 | `weather` | Current weather data |
 | `forecast` | 5-day forecast |
 | `savedCities` | User saved favorites |
-| `darkMode` | Theme control |
 | `loading` | API call status |
 | `error` | Error message display |
 
@@ -88,7 +92,6 @@ Pages:
 
 Navigation uses React Router.
 
----
 
 # 5. Error Handling Logic
 - If query empty → show “Please enter a city name”
