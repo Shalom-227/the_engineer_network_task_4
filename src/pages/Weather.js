@@ -111,9 +111,11 @@ function App() {
               ? "app clear-day"
               : weather.weather[0].main === "Smoke"
                 ? "app smoky"
-                : weather.main.temp > 35
-                  ? "app summer"
-                  : "app"
+                : weather.weather[0].main === "Mist"
+                  ? "app mist"
+                  : weather.main.temp > 35
+                    ? "app summer"
+                    : "app"
       )
     : "app"
     }>

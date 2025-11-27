@@ -24,4 +24,4 @@ const daily = forecastResult.list
 ❗ "City not found" even for valid input
 
 Cause: Misspelled or incorrect city
-Fix: Check API usage, ensure country codes not required.
+Fix: Ensure city is correctly spelt.
