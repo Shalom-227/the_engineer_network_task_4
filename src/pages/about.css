@@ -1,6 +1,6 @@
 
 .about-page {
-    height: 140vh;
+    /* height: 200vh; */
     max-width: 100%;
     background-image: 
     linear-gradient(to bottom, rgba(0,128,128,0.5), rgba(255,255,255,0));
@@ -9,16 +9,17 @@
     position: relative;
     z-index: 1;
     
+    
 }
 
 .block {
      background: rgba(255, 255, 255, 0.1);
      border-radius: 10px;
-  overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin: 0 1rem;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     /* align-items: center; */
+     margin: 0 2rem;
 
     h1, h2 {
         padding-top: 4rem;
@@ -38,6 +39,7 @@
         font-size: 1.5rem;
         line-height: 1.55;
         text-align: center;
+        margin-bottom: 5rem;
     }
     ul{
        list-style:disc;

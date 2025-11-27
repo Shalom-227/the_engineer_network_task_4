@@ -43,7 +43,7 @@
 @media(max-width: 380px) {
 
   .footer-container {
-    margin-top: 50vh;
+    /* margin-top: 15vh; */
   }
   
 }
@@ -51,7 +51,7 @@
 @media(max-width: 500px) {
 
   .footer-container {
-    margin-top: 25vh;
+    /* margin-top: 40vh; */
   }
   
 }
