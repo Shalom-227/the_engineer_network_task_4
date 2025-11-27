@@ -5,8 +5,7 @@ function About() {
     <div className="about-page">
       <div className='block'>
         <h1>About Your Daily Weather App</h1>
-        <p> <span>Welcome!</span><br />
-          Your Daily Weather App provides accurate, real-time weather updates for any city in the world.
+        <p>Your Daily Weather App provides accurate, real-time weather updates for any city in the world.
           With a simple search, you can view the current temperature, weather conditions, and a detailed 5-day forecast.<br />
           The app is designed to be fast, responsive, and beginner-friendly, making it easy for anyone to check the weather quickly and reliably.
           Whether you’re planning your day, checking travel conditions, or just curious about the weather in another country, 
