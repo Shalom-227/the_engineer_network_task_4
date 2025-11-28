@@ -38,7 +38,6 @@
         padding: 0 1.5rem;
     }
     ul{
-       list-style:disc;
        margin: 0 1rem;
        font-size: 1.5rem;
     }
@@ -46,7 +45,13 @@
     li{
         margin: 0 1rem;
         line-height: 1.55;
+        list-style: none;
+        
     }
+
+    li::before {
+            content: " ☀️ ";
+        }
 }
 
 .space {
@@ -54,3 +59,29 @@
 }
 
 
+/* media queries
+mobile first principle */
+
+
+
+ @media(max-width: 1861px) {
+    li{
+        text-align: center;
+        /* margin-left: 40rem; */
+    }
+    li::before {
+            margin-left: 2rem;
+        }
+    p {
+        text-align: center;
+    }
+}
+
+@media(max-width: 900px) {
+    li{
+        text-align: left;
+    }
+    p {
+        text-align: left;
+    }
+} 

@@ -1,6 +1,6 @@
 # 🌦️ Your Daily Weather App Documentation
 
-Welcome to the official documentation for the Weather App — a modern, responsive React application that displays real-time weather information and a 5-day forecast for any city.
+Welcome to the official documentation for Your Daily Weather App — a modern, responsive React application that displays real-time weather information and a 5-day forecast for any city.
 
 This project demonstrates:
 ✔ API integration  
@@ -8,7 +8,18 @@ This project demonstrates:
 ✔ React Router  
 ✔ CRUD functionality  
 ✔ LocalStorage persistence  
-✔ Responsive UI  
+✔ Responsive UI 
+
+
+## Live Demo
+https://the-engineer-network-task-4-wsnk.vercel.app/about
+
+## Tech Stack
+- React (Frontend)
+- OpenWeatherMap API (Weather Data)
+- CSS Vanilla (Styling)
+- Vercel (Deployment)
+
 
 Use the sidebar files to explore installation instructions, API usage, architecture, and more.
 
